@@ -33,6 +33,44 @@ Then visit `http://localhost:8001/docs` for the interactive Swagger UI.
 
 A trained YOLO weights file is required. Drop `best.pt` under `data/runs/<run-name>/weights/best.pt` — the pipeline's `get_best_model()` finds the most recent `best.pt` it can see. Trained weights are not shipped with this repo because they're dataset-specific; bring your own or train one from Ultralytics starter weights on your own labeled set.
 
+## Example Outputs
+
+### End-to-End Pipeline Execution
+
+**1. API Interface (Swagger UI)**
+![API Interface](docs/images/git4.png)
+
+**2. Job Queued**
+![Job Queued](docs/images/git3.png)
+
+**3. Frame Extraction Started**
+![Frame Extraction](docs/images/git1.png)
+
+**4. Detection Running (Initial Progress)**
+![Detection Running](docs/images/git2.png)
+
+**5. Mid-Processing Status**
+![Mid Processing](docs/images/git10.png)
+
+**6. Writing Outputs Phase**
+![Writing Outputs](docs/images/git9.png)
+
+**7. Pipeline Completion Summary (Deduped + Final Counts)**
+![Pipeline Complete](docs/images/git8.png)
+
+---
+
+### Geospatial Output (KMZ / GIS)
+
+**8. KMZ Output Overview (All Detected Assets)**
+![KMZ Overview](docs/images/git5.png)
+
+**9. Individual Detection with OCR + Geolocation**
+![Detection Detail](docs/images/git6.png)
+
+**10. Full Detection List + Asset Classification**
+![Detection List](docs/images/git7.png)
+
 ## Running a job
 
 ```bash
