@@ -38,38 +38,38 @@ A trained YOLO weights file is required. Drop `best.pt` under `data/runs/<run-na
 ### End-to-End Pipeline Execution
 
 **1. API Interface (Swagger UI)**
-![API Interface](docs/images/git4.png)
+![API Interface](docs/images/git3.png)
 
 **2. Job Queued**
-![Job Queued](docs/images/git3.png)
+![Job Queued](docs/images/git4.png)
 
 **3. Frame Extraction Started**
-![Frame Extraction](docs/images/git1.png)
+![Frame Extraction Started](docs/images/git5.png)
 
-**4. Detection Running (Initial Progress)**
-![Detection Running](docs/images/git2.png)
+**4. Detection Running (Post-Extraction)**
+![Detection Running](docs/images/git6.png)
 
-**5. Mid-Processing Status**
-![Mid Processing](docs/images/git10.png)
+**5. Mid-Processing Status (16/66 Frames)**
+![Mid Processing 16 of 66](docs/images/git7.png)
 
-**6. Writing Outputs Phase**
+**6. Late-Processing Status (52/66 Frames)**
+![Late Processing 52 of 66](docs/images/git8.png)
+
+**7. Writing Outputs Phase**
 ![Writing Outputs](docs/images/git9.png)
 
-**7. Pipeline Completion Summary (Deduped + Final Counts)**
-![Pipeline Complete](docs/images/git8.png)
+**8. Pipeline Completion Summary (Final Counts / Deduped Assets)**
+![Pipeline Complete](docs/images/git10.png)
 
 ---
 
 ### Geospatial Output (KMZ / GIS)
 
-**8. KMZ Output Overview (All Detected Assets)**
-![KMZ Overview](docs/images/git5.png)
+**9. KMZ Output Overview (Detected Assets + GPS Track)**
+![KMZ Output Overview](docs/images/git2.png)
 
-**9. Individual Detection with OCR + Geolocation**
-![Detection Detail](docs/images/git6.png)
-
-**10. Full Detection List + Asset Classification**
-![Detection List](docs/images/git7.png)
+**10. Individual Detection Detail (OCR + Geolocation + Thumbnail)**
+![Detection Detail](docs/images/git1.png)
 
 ## Running a job
 
