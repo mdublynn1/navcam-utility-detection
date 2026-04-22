@@ -1,0 +1,41 @@
+version: "3.8"
+
+# ============================================================
+#  nav-cam-detect — YOLO + OCR + Triangulation Pipeline
+#  Runs on CPU (no GPU required)
+#
+#  Services
+#  ─────────────────────────────────────────────────────────
+#  yolo-api      → http://localhost:8001
+#  yolo-api docs → http://localhost:8001/docs
+# ============================================================
+
+services:
+
+  yolo-api:
+    build:
+      context: ./yolo-api
+      dockerfile: Dockerfile
+    container_name: yolo-api
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    volumes:
+      # Hot-reload: mount main.py directly so edits apply without rebuilding
+      - ./yolo-api/main.py:/app/main.py
+      # Data folders shared between host and container.
+      # Create these on first run: mkdir -p data/{datasets,runs,incoming,predictions,pipeline}
+      - ./data/datasets:/data/datasets
+      - ./data/runs:/data/runs
+      - ./data/incoming:/data/incoming
+      - ./data/predictions:/data/predictions
+      - ./data/pipeline:/data/pipeline
+    environment:
+      - DATASETS_PATH=/data/datasets
+      - RUNS_PATH=/data/runs
+      - INCOMING_PATH=/data/incoming
+      - PREDICTIONS_PATH=/data/predictions
+      - PIPELINE_PATH=/data/pipeline
+      # Google Cloud Vision API key — required for OCR mode.
+      # Populate in .env (see .env.example).
+      - GOOGLE_VISION_API_KEY=${GOOGLE_VISION_API_KEY:-}

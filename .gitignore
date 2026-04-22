@@ -1,0 +1,65 @@
+# ── Secrets ────────────────────────────────────────────────
+.env
+*.pem
+*.key
+credentials*.json
+service_account*.json
+
+# ── Data (model weights, datasets, job outputs) ────────────
+data/
+!data/.gitkeep
+*.pt
+*.onnx
+*.engine
+*.pkl
+runs/
+datasets/
+pipeline/
+predictions/
+incoming/
+
+# ── Video / imagery ────────────────────────────────────────
+*.mov
+*.mp4
+*.avi
+*.mkv
+*.webm
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.kmz
+*.kml
+*.gpx
+*.geojson
+
+# ── Python ─────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Backups / scratch ──────────────────────────────────────
+_backups/
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Editor / IDE ───────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-*
+
+# ── Docker volumes ─────────────────────────────────────────
+docker-volumes/
